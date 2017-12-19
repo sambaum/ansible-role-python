@@ -1,0 +1,5 @@
+---
+# defaults file for ansible-role-python
+python_versions: [2.7]
+python_install: [] 
+python_ppa: ppa:fkrull/deadsnakes

@@ -1,0 +1,5 @@
+- name: install python
+  package:
+    name: python{{ item }}
+    state: present
+  with_items: "{{ python_versions }}"

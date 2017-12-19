@@ -1,0 +1,18 @@
+---
+# tasks file for ansible-role-python
+- import_tasks: install.deb.yml
+  when: ansible_os_family == 'Debian'
+
+- import_tasks: install.yum.yml
+  when: ansible_os_family == 'RedHat'
+
+- name: install python-pip
+  package:
+    name: python-pip
+    state: present
+
+- name: Install global python packages
+  pip: 
+    name: "{{item}}"
+  with_items:
+    - "{{ python_install }}"

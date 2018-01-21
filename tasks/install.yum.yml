@@ -1,2 +1,6 @@
-- fail:
-    msg: "CentOS install not yet implemented"
+---
+
+- name: Install python
+  yum:
+    name: python
+    state: present

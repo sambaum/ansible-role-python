@@ -1,3 +1,6 @@
+- name: Remove legacy repository ppa:fkrull/deadsnakes
+  apt_repository: repo=ppa:fkrull/deadsnakes update_cache=yes state=absent
+
 - name: Add python apt repository
   apt_repository: repo={{python_ppa}} update_cache=yes
   when: python_ppa is defined

@@ -2,4 +2,5 @@
 # defaults file for ansible-role-python
 python_versions: [2.7] #Multiple Version not implemented for yum (ie. CentOS), default Version will be installed.
 python_install: [] 
-python_ppa: ppa:fkrull/deadsnakes
+#python_ppa: ppa:fkrull/deadsnakes
+python_ppa: ppa:deadsnakes/ppa

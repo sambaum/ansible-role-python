@@ -16,3 +16,14 @@
     name: "{{item}}"
   with_items:
     - "{{ python_install }}"
+
+- name: Workaround - Remove python-openssl
+  apt:
+    name: python-openssl
+    state: absent
+  when: (ubuntu_python_openssl_workaround and ansible_os_family == 'Debian')
+
+- name: Workaround - Install pyOpenSSL with pip
+  pip:
+    name: pyOpenSSL
+  when: (ubuntu_python_openssl_workaround and ansible_os_family == 'Debian')

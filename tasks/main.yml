@@ -11,6 +11,10 @@
     name: python-pip
     state: present
 
+- name: upgrade python-pip with pip
+  pip:
+    name: pip
+
 - name: Install global python packages
   pip: 
     name: "{{item}}"
